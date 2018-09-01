@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2018 at 10:24 AM
+-- Generation Time: Sep 01, 2018 at 03:08 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -30,7 +30,8 @@ CREATE TABLE `locations` (
   `woeid` bigint(20) NOT NULL,
   `title` varchar(64) NOT NULL,
   `location_type` varchar(32) NOT NULL,
-  `latt_long` varchar(16) NOT NULL
+  `latt_long` varchar(32) NOT NULL,
+  `update_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -40,10 +41,22 @@ CREATE TABLE `locations` (
 --
 
 CREATE TABLE `weather` (
-  `id` int(11) NOT NULL,
+  `id` varchar(128) NOT NULL,
   `woeid` bigint(20) NOT NULL,
   `weather_state_name` varchar(16) NOT NULL,
   `weather_state_abbr` varchar(4) NOT NULL,
+  `wind_direction_compass` varchar(4) NOT NULL,
+  `created` datetime NOT NULL,
+  `applicable_date` date NOT NULL,
+  `min_temp` decimal(10,5) NOT NULL,
+  `max_temp` decimal(10,5) NOT NULL,
+  `the_temp` decimal(10,5) NOT NULL,
+  `wind_speed` decimal(10,5) NOT NULL,
+  `wind_direction` decimal(10,5) NOT NULL,
+  `air_pressure` decimal(10,1) NOT NULL,
+  `humidity` int(11) NOT NULL,
+  `visibility` decimal(10,5) NOT NULL,
+  `predictability` int(11) NOT NULL,
   `submit_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -71,12 +84,7 @@ ALTER TABLE `weather`
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `woeid` bigint(20) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `weather`
---
-ALTER TABLE `weather`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `woeid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1047379;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
