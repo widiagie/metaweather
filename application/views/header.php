@@ -23,7 +23,32 @@
 
 	<body>
 		
-		<div class="site-content">  
+		<div class="site-content">
+
+			<div class="site-header">
+				<div class="container">
+					<a href="./" class="branding">
+						<img src="assets/images/logo.png" alt="" class="logo">
+						<div class="logo-type">
+							<h1 class="site-title">Meta Weather API</h1>
+							<small class="site-description">Assessment Test</small>
+						</div>
+					</a>
+
+					<!-- Default snippet for navigation -->
+					<div class="main-navigation">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item <?php if($_GET['show'] == ''){?> current-menu-item <?php }?>"><a href="./">Home</a></li>
+							<li class="menu-item <?php if($_GET['show'] == 'list'){?> current-menu-item <?php }?>"><a href="./list">Location list</a></li> 
+						</ul> <!-- .menu -->
+					</div> <!-- .main-navigation -->
+
+					<div class="mobile-navigation"></div>
+
+				</div>
+			</div> <!-- .site-header -->
+
 			<div class="hero" data-bg-image="assets/images/banner.png">
 				<div class="container">
 					<form action="./" method="post" class="find-location">
