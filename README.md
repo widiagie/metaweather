@@ -4,9 +4,17 @@ Assessment Test for Web Developer
 
 Metode bahasa pemograman 
 - PHP Native yang disesuaikan seperti framework Codeigniter.
+- PHP version: 5.6.15
 
 Database : 
-- MySQL
+- MySQL 5.0.11
+
+Library
+- PHP Adodb  (http://adodb.org/dokuwiki/doku.php)
 
 Konfigurasi :
 - Application/config/database.php
+
+DB structure :
+- db/metaweather.sql
+
