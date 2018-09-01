@@ -20,3 +20,19 @@
 		<![endif]-->
 
 	</head>
+
+	<body>
+		
+		<div class="site-content">  
+			<div class="hero" data-bg-image="assets/images/banner.png">
+				<div class="container">
+					<form action="#" class="find-location">
+						<input type="text" placeholder="Find your location...">
+						<input type="submit" value="Find">
+					</form>
+
+				</div>
+			</div>
+			<div class="forecast-table">
+				<div class="container">
+					<div class="forecast-container">

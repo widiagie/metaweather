@@ -1,3 +1,7 @@
+				</div>
+			</div>
+		</div>
+
 			<footer class="site-footer">
 				<div class="container"> 
 					<center><p class="colophon">Copyright 2018 Widigie@gmail.com </p></center>
