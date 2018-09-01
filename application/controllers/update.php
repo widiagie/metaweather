@@ -1,17 +1,12 @@
-<?php   
-	$sql02 = "SELECT woeid FROM locations WHERE woeid=".$woeid.""; 
-	$result02 = $mysqli->query($sql02); 
-	if ($result02->num_rows > 0) {
-	// output data of each row
-	while($row02 = $result02->fetch_assoc()) { 
-		$woeid02 = $row02["woeid"]; 
-		print $woeid02;
+<?php     
+	$now = date("Y-m-d H:i:s"); 
+	$exist_file = $DB->getRow("SELECT woeid FROM locations WHERE woeid=".$woeid."");  
 
-		if(empty($woeid02)){ 
-			echo "disini aja";
-		}
-
-
-	}
-}
+	if(empty(@$exist_file['woeid'])){
+		$query_addtxt = "insert into locations (woeid,title,location_type,latt_long,update_date) value ('".$woeid."','".$title."','".$location_type."','".$latt_long."','".$now."')"; 
+		$DB->execute($query_addtxt);
+	}else{
+		$query_updatetxt = "update locations set latt_long='".$latt_long."', update_date='".$now."'  where woeid='".$woeid."' "; 
+		$DB->execute($query_updatetxt);
+	} 
 ?>

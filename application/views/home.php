@@ -4,7 +4,7 @@
 						<div class="today forecast">
 							<div class="forecast-header">
 								<div class="day"><?php echo date('l', strtotime($dataDetail["consolidated_weather"][0]["applicable_date"])); ?></div>
-								<div class="date"><?php echo date('d F Y', strtotime($dataDetail["consolidated_weather"][0]["applicable_date"])); ?></div>
+								<div class="date"><?php echo date('d F Y', strtotime($dataDetail["consolidated_weather"][0]["applicable_date"])); echo " - ".date('H:i');?></div>
 							</div> <!-- .forecast-header -->
 							<div class="forecast-content">
 								<div class="location"><?php echo $title; ?></div>

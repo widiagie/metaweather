@@ -1,7 +1,7 @@
 <?php
      $today = date("Y-m-d");
 
-     $search = @$_POST['search']; 
+     $search = addslashes(trim(htmlentities(@$_POST['search']))); 
 
      if(@$search){
           $search2 = urlencode($search);
@@ -19,18 +19,16 @@
      $i=0;
      if ( count($arrAPI) > 0 ){
           foreach ( $dataAPI as $data_API ) {
-               $title                        = $data_API["title"];
-               $location_type                = $data_API["location_type"];
-               $woeid                        = $data_API["woeid"];
-               $latt_long                    = $data_API["latt_long"];
+               $title                        = @$data_API["title"];
+               $location_type                = @$data_API["location_type"];
+               $woeid                        = @$data_API["woeid"];
+               $latt_long                    = @$data_API["latt_long"];
 
                include('application/controllers/update.php');
 
-               $mapAPI = getContent("http://maps.googleapis.com/maps/api/geocode/json?latlng=".$latt_long."&sensor=true&key=".$keyGoogle); 
-               #test($mapAPI);
+               $mapAPI = getContent("http://maps.googleapis.com/maps/api/geocode/json?latlng=".$latt_long."&sensor=true&key=".$keyGoogle);  
 
-               $dataDetail = getContent("https://www.metaweather.com/api/location/".$woeid."/"); 
-               #test($dataDetail);
+               $dataDetail = getContent("https://www.metaweather.com/api/location/".$woeid."/");  
 
                if (count($dataDetail["consolidated_weather"]) > 0 ){
                      
@@ -53,7 +51,7 @@
                          $predictability               = $data_API_detail["predictability"];
                          $svgimg                       = "<img src=\"https://www.metaweather.com/static/img/weather/".$weather_state_abbr.".svg\" width=48>";
   
-                         
+                         include('application/controllers/update_detail.php');
                          include('application/views/home.php');
 
                     }
