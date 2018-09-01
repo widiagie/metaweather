@@ -3,7 +3,7 @@
 
 	date_default_timezone_set('Asia/Jakarta');
 
-	#require_once "config/database.php";
+	require_once "application/config/database.php";
 	require_once "application/config/func.php";
  
 	include('application/views/header.php'); 

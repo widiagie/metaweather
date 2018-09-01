@@ -24,6 +24,8 @@
                $woeid                        = $data_API["woeid"];
                $latt_long                    = $data_API["latt_long"];
 
+               include('application/controllers/update.php');
+
                $mapAPI = getContent("http://maps.googleapis.com/maps/api/geocode/json?latlng=".$latt_long."&sensor=true&key=".$keyGoogle); 
                #test($mapAPI);
 

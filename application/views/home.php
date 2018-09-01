@@ -34,6 +34,7 @@
 								<div class="degree"><?php echo ceil($the_temp);?><sup>o</sup>C</div>
 								<div class="day"><small><?php echo $weather_state_name; ?></small></div><br>
 								<div class="day"> <?php echo ceil($max_temp);?><sup>o</sup>C  /  <?php echo ceil($min_temp);?><sup>o</sup>C</div>
+								<div class="day"> <?php echo ceil($wind_speed);?>km/h - <?php echo $wind_direction_compass;?> <br> <?php echo ceil($visibility);?>mph</div>
 							</div>
 						</div>
 
