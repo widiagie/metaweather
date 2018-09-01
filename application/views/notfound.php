@@ -1,6 +1,6 @@
 
 <div class="today forecast">
-
-Data not found
-
+	<div class="degree">
+		Data not found
+	</div>
 </div>

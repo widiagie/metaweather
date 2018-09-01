@@ -1,8 +1,7 @@
 <?php
      $today = date("Y-m-d");
 
-     $search = @$_POST['search'];
-     #print $search;die;
+     $search = @$_POST['search']; 
 
      if(@$search){
           $search2 = urlencode($search);
@@ -57,9 +56,7 @@
 
                     }
 
-               }else{
-                         include('application/views/notfound.php');
-               }
+               } 
 
           }
      }
