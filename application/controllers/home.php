@@ -1,7 +1,18 @@
 <?php
      $today = date("Y-m-d");
+
+     $search = @$_POST['search'];
+     #print $search;die;
+
+     if(@$search){
+          $search2 = urlencode($search);
+     }else{
+          $search2 = "jakarta";
+     }
      
-     $dataAPI = getContent("https://www.metaweather.com/api/location/search/?query=jakarta"); 
+     $keyGoogle = "AIzaSyD0vi6QF3gnyCNywpL5ILKk-LXWAbz8ITQ";
+ 
+     $dataAPI = getContent("https://www.metaweather.com/api/location/search/?query=".$search2); 
      #test($dataAPI);
   
      $arrAPI = "";
@@ -13,6 +24,9 @@
                $location_type                = $data_API["location_type"];
                $woeid                        = $data_API["woeid"];
                $latt_long                    = $data_API["latt_long"];
+
+               $mapAPI = getContent("http://maps.googleapis.com/maps/api/geocode/json?latlng=".$latt_long."&sensor=true&key=".$keyGoogle); 
+               #test($mapAPI);
 
                $dataDetail = getContent("https://www.metaweather.com/api/location/".$woeid."/"); 
                #test($dataDetail);
@@ -42,6 +56,9 @@
                          include('application/views/home.php');
 
                     }
+
+               }else{
+                         include('application/views/notfound.php');
                }
 
           }

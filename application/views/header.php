@@ -26,11 +26,10 @@
 		<div class="site-content">  
 			<div class="hero" data-bg-image="assets/images/banner.png">
 				<div class="container">
-					<form action="#" class="find-location">
-						<input type="text" placeholder="Find your location...">
-						<input type="submit" value="Find">
-					</form>
-
+					<form action="./" method="post" class="find-location">
+						<input type="text" name="search" placeholder="Find your location...">
+						<input type="submit" value="Search">
+					</form> 
 				</div>
 			</div>
 			<div class="forecast-table">
