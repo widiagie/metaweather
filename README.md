@@ -17,3 +17,8 @@ Konfigurasi :
 
 DB structure :
 - db/metaweather.sql
+
+Fitur yang telah dikerjakan :
+1. Fitur search untuk mengetahui cuaca kota mana yang ingin dilihat.
+2. Fitur untuk menyimpan hasil search, kemudian tampilkan hasil penyimpanan di menu “dashboard, daftar kota (locations)” .
+3. Push source code ke dalam git dengan branch master, feature_search, feature_save.
