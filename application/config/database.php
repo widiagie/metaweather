@@ -1,4 +1,5 @@
 <?php 
+error_reporting(E_ALL ^ E_DEPRECATED);
 /* Database Configuration */
 define('DB_TYPE','mysql');
 define('DB_HOST','localhost'); 
@@ -11,4 +12,4 @@ $DSN =  DB_TYPE."://".DB_USER.":".DB_PASS."@".DB_HOST."/".DB_DEFAULT;
 require "application/vendor/adodb5/adodb.inc.php"; 
 require "application/vendor/libraries/library.php";
 
-$DB =& ADONewConnection($DSN);
+$DB = ADONewConnection($DSN);
