@@ -27,7 +27,7 @@
      $arrAPI = "";
      $arrAPIdetail = "";
      $i=0;
-     if ( count($arrAPI) > 0 ){
+     if ( count($dataAPI) > 0 ){
           foreach ( $dataAPI as $data_API ) {
                $title                        = @$data_API["title"];
                $location_type                = @$data_API["location_type"];
@@ -66,9 +66,13 @@
 
                     }
 
-               } 
+               }
 
           }
+
+     }
+     else{
+          include('application/views/notfound.php');
      }
 
 ?>
