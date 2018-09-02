@@ -5,16 +5,19 @@
 
 	require_once "application/config/database.php";
 	require_once "application/config/func.php";
+	require_once "application/config/routes.php";
 
 		include('application/views/header.php'); 
 
 	if (isset($_REQUEST['show'])){
 			$module = $_REQUEST['show'];
 			switch ($module) {   
-				
-			case 'list' : 
-				 include('application/controllers/list.php'); 
-			break;
+				case 'home' : 
+					 include('application/controllers/home.php'); 
+				break;
+				case 'list' : 
+					 include('application/controllers/list.php'); 
+				break;
 			}
 	
 	}else{ 

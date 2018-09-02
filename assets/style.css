@@ -1674,3 +1674,11 @@ form textarea {
     .site-footer .social-links a:hover {
       background: #009ad8;
       color: white; }
+    .list-city {
+      padding: 10px 20px;
+      border-radius: 30px;
+      border-color: #009ad8;
+      color: white; 
+      background: none;
+      width:100%;
+    }
