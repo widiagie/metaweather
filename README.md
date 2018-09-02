@@ -3,7 +3,7 @@ Assessment Test for Web Developer
 01 September 2018
 
 Metode bahasa pemograman 
-- PHP Native yang disesuaikan seperti framework Codeigniter.
+- PHP Native yang dimodifikasi dgn framework Codeigniter.
 - PHP version: 5.6.15
 
 Database : 
@@ -17,4 +17,3 @@ Konfigurasi :
 
 DB structure :
 - db/metaweather.sql
-
