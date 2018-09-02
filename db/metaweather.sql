@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2018 at 03:08 PM
+-- Generation Time: Sep 02, 2018 at 02:29 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `metaweather`
 --
+CREATE DATABASE IF NOT EXISTS `metaweather` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `metaweather`;
 
 -- --------------------------------------------------------
 
@@ -84,7 +86,7 @@ ALTER TABLE `weather`
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `woeid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1047379;
+  MODIFY `woeid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2459118;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -5,14 +5,24 @@
 
      if(@$search){
           $search2 = urlencode($search);
-     }else{
+     }
+     elseif(@$_GET['woeid']){
+          $search2 = @$_GET['woeid']; 
+     }
+     else{
           $search2 = "jakarta";
      }
      
      $keyGoogle = "AIzaSyD0vi6QF3gnyCNywpL5ILKk-LXWAbz8ITQ";
- 
-     $dataAPI = getContent("https://www.metaweather.com/api/location/search/?query=".$search2); 
-     #test($dataAPI);
+     
+     if(@$_GET['woeid']){
+          $woeidAPI = getContent("https://www.metaweather.com/api/location/".$search2."/");
+          $dataAPI  = getContent("https://www.metaweather.com/api/location/search/?query=".$woeidAPI['title']);
+          #test($woeidAPI);die; 
+     }else{
+          $dataAPI = getContent("https://www.metaweather.com/api/location/search/?query=".$search2); 
+          #test($dataAPI);
+     }
   
      $arrAPI = "";
      $arrAPIdetail = "";
